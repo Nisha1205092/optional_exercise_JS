@@ -6,8 +6,11 @@ function findComponents(array, targetNumber) {
 		let temp = (targetNumber - array[i]) > 0 ? targetNumber - array[i] : array[i] - targetNumber;
 
 		if(array.find(num => num === temp)) {
-			ans = ans.concat(array[i], temp);
-			break;
+			if(temp != array[i]) {
+				ans = ans.concat(array[i], temp);
+				break;	
+			}
+			
 		}
 
 	}
